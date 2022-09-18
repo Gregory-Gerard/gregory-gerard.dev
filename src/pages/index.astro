@@ -3,8 +3,12 @@ import Layout from '../layouts/Layout.astro';
 import RoundedHoverLink from '../components/RoundedHoverLink';
 import UnderlinedLink from '../components/UnderlinedLink';
 import { Linkedin, Mail } from 'react-feather';
-import LaBoiteImmoIcon from '../components/LaBoiteImmoIcon';
+import LaBoiteImmoIcon from '../components/icons/LaBoiteImmoIcon';
 import Avatar from '../components/Avatar';
+import CaseStudy from '../components/CaseStudy';
+import React from 'react';
+
+const cases = await Astro.glob('../pages/cases/*.md');
 ---
 
 <Layout title="Grégory Gérard - Développeur web full-stack">
@@ -31,6 +35,29 @@ import Avatar from '../components/Avatar';
       <RoundedHoverLink href="mailto:contact@gregory-gerard.dev" target="_blank">
         <Mail size={24} />
       </RoundedHoverLink>
+    </div>
+  </div>
+
+  <div class="flex flex-col gap-8 mb-16">
+    <h2 class="flex items-center gap-2 text-lg font-medium text-zinc-100">Quelques études de cas</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {
+        cases.map(async (item) => {
+          /* @vite-ignore */
+          const icon = (await import(`../components/icons/${item.frontmatter.icon}.tsx`)).default as React.FC;
+
+          return (
+            <CaseStudy
+              title={item.frontmatter.title}
+              headline={item.frontmatter.headline}
+              background={item.frontmatter.background}
+              icon={icon}
+              url={item.url}
+            />
+          );
+        })
+      }
     </div>
   </div>
 </Layout>

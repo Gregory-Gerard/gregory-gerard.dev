@@ -1,0 +1,9 @@
+<svg id="visual" viewBox="0 0 900 450" width="900" height="450" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+    <rect x="0" y="0" width="900" height="450" fill="#1d1d1f"></rect>
+    <g transform="translate(900, 450)">
+        <path d="M-180 0C-163.2 -23.7 -146.4 -47.5 -133.4 -77C-120.3 -106.5 -111.1 -141.9 -89.5 -155C-67.9 -168.2 -34 -159.1 0 -150L0 0Z" fill="#bed000"></path>
+    </g>
+    <g transform="translate(0, 0)">
+        <path d="M154 0C162 34.1 170 68.2 155.9 90C141.8 111.8 105.7 121.3 76 131.6C46.3 141.9 23.2 153 0 164L0 0Z" fill="#bed000"></path>
+    </g>
+</svg>
