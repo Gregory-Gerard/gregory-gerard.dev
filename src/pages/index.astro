@@ -1,13 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import RoundedHoverLink from '../components/RoundedHoverLink';
+import UnderlinedLink from '../components/UnderlinedLink';
 import { Linkedin, Mail } from 'react-feather';
 import LaBoiteImmoIcon from '../components/LaBoiteImmoIcon';
 import Avatar from '../components/Avatar';
 ---
 
 <Layout title="Grégory Gérard - Développeur web full-stack">
-  <div class="flex flex-col gap-8">
+  <div class="flex flex-col gap-8 mb-16">
     <Avatar className="w-24 h-24" />
     <h1 class="max-w-3xl text-6xl tracking-tight font-bold">
       Développeur web full-stack chez{' '}
@@ -17,12 +18,13 @@ import Avatar from '../components/Avatar';
     </h1>
 
     <p class="max-w-3xl leading-relaxed text-zinc-400">
-      Je suis Grégory, un développeur web full-stack, actuellement sur Hyères. En ce moment je suis Tech Lead chez La
-      Boîte Immo, une société éditant des logiciels phares dans le secteur de l&apos;immobilier. En parallèle, je suis
-      aussi freelance afin de vous accompagner dans vos projets.
+      Je suis Grégory, un développeur web full-stack, actuellement sur Hyères. En ce moment je suis Tech Lead chez
+      <UnderlinedLink href="https://la-boite-immo.com" target="_blank" rel="noreferrer">La Boîte Immo</UnderlinedLink>,
+      une société éditant des logiciels phares dans le secteur de l&apos;immobilier. En parallèle, je suis aussi
+      freelance afin de vous accompagner dans vos projets.
     </p>
 
-    <div class="flex gap-6">
+    <div class="flex gap-6 text-zinc-400">
       <RoundedHoverLink href="https://www.linkedin.com/in/gregoryger/" target="_blank">
         <Linkedin size={24} />
       </RoundedHoverLink>
