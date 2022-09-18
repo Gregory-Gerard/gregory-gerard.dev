@@ -9,6 +9,7 @@ import CaseStudy from '../components/CaseStudy';
 import React from 'react';
 
 const cases = await Astro.glob('../pages/cases/*.md');
+cases.sort((a, b) => a.frontmatter.order - b.frontmatter.order);
 ---
 
 <Layout title="Grégory Gérard - Développeur web full-stack">
