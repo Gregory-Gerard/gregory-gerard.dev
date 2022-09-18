@@ -1,0 +1,33 @@
+---
+import Layout from '../layouts/Layout.astro';
+import RoundedHoverLink from '../components/RoundedHoverLink';
+import { Linkedin, Mail } from 'react-feather';
+import LaBoiteImmoIcon from '../components/LaBoiteImmoIcon';
+---
+
+<Layout title="Grégory Gérard - Développeur web full-stack">
+  <div class="flex flex-col gap-8">
+    {/* à voir si je rajoute un avatar ici ? */}
+    <h1 class="max-w-3xl text-6xl tracking-tight font-bold">
+      Développeur web full-stack chez{' '}
+      <RoundedHoverLink href="https://la-boite-immo.com" target="_blank" rel="noreferrer">
+        <LaBoiteImmoIcon className="inline" />
+      </RoundedHoverLink>
+    </h1>
+
+    <p class="max-w-3xl leading-relaxed text-zinc-400">
+      Je suis Grégory, un développeur web full-stack, actuellement sur Hyères. En ce moment je suis Tech Lead chez La
+      Boîte Immo, une société éditant des logiciels phares dans le secteur de l&apos;immobilier. En parallèle, je suis
+      aussi freelance afin de vous accompagner dans vos projets.
+    </p>
+
+    <div class="flex gap-6">
+      <RoundedHoverLink href="https://www.linkedin.com/in/gregoryger/" target="_blank">
+        <Linkedin size={24} />
+      </RoundedHoverLink>
+      <RoundedHoverLink href="mailto:contact@gregory-gerard.dev" target="_blank">
+        <Mail size={24} />
+      </RoundedHoverLink>
+    </div>
+  </div>
+</Layout>
