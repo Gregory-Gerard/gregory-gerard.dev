@@ -3,11 +3,12 @@ import Layout from '../layouts/Layout.astro';
 import RoundedHoverLink from '../components/RoundedHoverLink';
 import { Linkedin, Mail } from 'react-feather';
 import LaBoiteImmoIcon from '../components/LaBoiteImmoIcon';
+import Avatar from '../components/Avatar';
 ---
 
 <Layout title="Grégory Gérard - Développeur web full-stack">
   <div class="flex flex-col gap-8">
-    {/* à voir si je rajoute un avatar ici ? */}
+    <Avatar className="w-24 h-24" />
     <h1 class="max-w-3xl text-6xl tracking-tight font-bold">
       Développeur web full-stack chez{' '}
       <RoundedHoverLink href="https://la-boite-immo.com" target="_blank" rel="noreferrer">
