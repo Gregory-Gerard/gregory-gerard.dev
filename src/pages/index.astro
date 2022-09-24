@@ -6,6 +6,8 @@ import { Linkedin, Mail } from 'react-feather';
 import LaBoiteImmoIcon from '../components/icons/LaBoiteImmoIcon';
 import Avatar from '../components/Avatar';
 import CaseStudy from '../components/CaseStudy';
+import Section from '../components/Section';
+import Resume from '../components/Resume';
 import React from 'react';
 
 const cases = await Astro.glob('../pages/cases/*.md');
@@ -13,7 +15,7 @@ cases.sort((a, b) => a.frontmatter.order - b.frontmatter.order);
 ---
 
 <Layout title="Grégory Gérard - Développeur web full-stack">
-  <div class="flex flex-col gap-8 mb-16">
+  <Section>
     <Avatar className="w-24 h-24" />
     <h1 class="max-w-3xl text-6xl tracking-tight font-bold">
       Développeur web full-stack chez{' '}
@@ -38,11 +40,9 @@ cases.sort((a, b) => a.frontmatter.order - b.frontmatter.order);
         <Mail size={24} />
       </RoundedHoverLink>
     </div>
-  </div>
+  </Section>
 
-  <div class="flex flex-col gap-8 mb-16">
-    <h2 class="flex items-center gap-2 text-lg font-medium text-zinc-100">Quelques études de cas</h2>
-
+  <Section title="Quelques études de cas">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       {
         cases.map(async (item) => {
@@ -61,5 +61,6 @@ cases.sort((a, b) => a.frontmatter.order - b.frontmatter.order);
         })
       }
     </div>
+  </Section>
   </div>
 </Layout>
