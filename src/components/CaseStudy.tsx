@@ -18,7 +18,7 @@ export default function CaseStudy({
   return (
     <a
       href={url || '#'}
-      className="flex flex-col items-center gap-4 rounded-2xl overflow-hidden px-8 py-10 shadow-outline text-center bg-cover bg-center transition-transform hover:scale-[1.01]"
+      className="flex flex-col items-center gap-4 rounded-2xl overflow-hidden px-8 py-10 shadow-outline text-center bg-cover bg-center transition-transform hover:scale-[1.01] focus:scale-105"
       style={{ backgroundImage: `url(${background})` }}
     >
       {<Icon className="w-16 h-16" />}
