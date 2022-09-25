@@ -8,6 +8,7 @@ import Avatar from '../components/Avatar';
 import CaseStudy from '../components/CaseStudy';
 import Section from '../components/Section';
 import Resume from '../components/Resume';
+import Spotlight from '../components/Spotlight';
 import React from 'react';
 
 const cases = await Astro.glob('../pages/cases/*.md');
@@ -15,6 +16,8 @@ cases.sort((a, b) => a.frontmatter.order - b.frontmatter.order);
 ---
 
 <Layout title="Grégory Gérard - Développeur web full-stack">
+  <Spotlight client:only="react" />
+
   <Section>
     <Avatar className="w-24 h-24" />
     <h1 class="max-w-3xl text-6xl tracking-tight font-bold">
