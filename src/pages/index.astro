@@ -9,10 +9,28 @@ import CaseStudy from '../components/CaseStudy';
 import Section from '../components/Section';
 import Resume from '../components/Resume';
 import Spotlight from '../components/Spotlight';
+import ArticlePreview from '../components/ArticlePreview';
 import React from 'react';
+import { MarkdownInstance } from 'astro';
+import ArticleFrontmatter from '../types/ArticleFrontmatter';
 
 const cases = await Astro.glob('../pages/cases/*.md');
 cases.sort((a, b) => a.frontmatter.order - b.frontmatter.order);
+
+const articles = (await Astro.glob<ArticleFrontmatter>('../pages/articles/*.md'))
+  .map((article) => ({
+    ...article,
+    frontmatter: {
+      ...article.frontmatter,
+      publishedAt: article.frontmatter.publishedAt ? new Date(article.frontmatter.publishedAt) : undefined,
+    },
+  }))
+  .filter(
+    (article): article is MarkdownInstance<ArticleFrontmatter & { publishedAt: Date }> =>
+      !!article.frontmatter.publishedAt
+  );
+
+articles.sort((a, b) => a.frontmatter.publishedAt.getTime() - b.frontmatter.publishedAt.getTime());
 ---
 
 <Layout title="Grégory Gérard - Développeur web full-stack" className="cursor-disable">
@@ -69,8 +87,19 @@ cases.sort((a, b) => a.frontmatter.order - b.frontmatter.order);
     </div>
   </Section>
 
-  <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
-    <Section title="Mes notes" className="col-span-2" />
+  <div class="grid grid-cols-1 xl:grid-cols-3 gap-4">
+    <Section title="Mes notes" className="col-span-2">
+      {
+        articles.map((article) => (
+          <ArticlePreview
+            title={article.frontmatter.title}
+            metaDescription={article.frontmatter.metaDescription}
+            url={article.url}
+            publishedAt={article.frontmatter.publishedAt}
+          />
+        ))
+      }
+    </Section>
 
     <aside class="flex flex-col gap-6 p-6 rounded-2xl shadow-outline">
       <strong class="font-medium text-zinc-100">Parcours</strong>
