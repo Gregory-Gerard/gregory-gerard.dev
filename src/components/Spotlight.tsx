@@ -18,14 +18,14 @@ export default function Spotlight() {
   }, [setX, setY]);
 
   return (
-    x &&
-    y && (
+    (x && y && (
       <div className="hidden xl:block fixed w-screen h-screen overflow-hidden pointer-events-none inset-0">
         <div
           className="absolute w-24 h-24 rounded-full bg-zinc-800/5 pointer-events-none -translate-x-1/2 -translate-y-1/2"
           style={{ top: y, left: x }}
         ></div>
       </div>
-    )
+    )) ||
+    null
   );
 }
