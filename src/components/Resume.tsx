@@ -1,4 +1,5 @@
 import React from 'react';
+import { Briefcase } from 'react-feather';
 import DftIcon from './icons/DftIcon';
 import LaBoiteImmoLogo from './icons/LaBoiteImmoIcon';
 
@@ -41,6 +42,14 @@ export default function Resume() {
         roles={{
           'Développeur web': 'Sept. 2020 — Juin 2021',
           'Développeur alternant': 'Sept. 2017 — Août 2020',
+        }}
+      />
+
+      <Row
+        logo={<Briefcase className="w-6 h-6 text-zinc-600" />}
+        company="Freelance"
+        roles={{
+          'Développeur web': 'Jan. 2017 — En cours',
         }}
       />
     </div>
