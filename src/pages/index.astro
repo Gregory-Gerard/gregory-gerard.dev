@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import RoundedHoverLink from '../components/RoundedHoverLink';
 import UnderlinedLink from '../components/UnderlinedLink';
-import { Linkedin, Mail } from 'react-feather';
+import { Linkedin, Mail, GitHub } from 'react-feather';
 import LaBoiteImmoIcon from '../components/icons/LaBoiteImmoIcon';
 import Avatar from '../components/Avatar';
 import CaseStudy from '../components/CaseStudy';
@@ -15,7 +15,7 @@ const cases = await Astro.glob('../pages/cases/*.md');
 cases.sort((a, b) => a.frontmatter.order - b.frontmatter.order);
 ---
 
-<Layout title="Grégory Gérard - Développeur web full-stack">
+<Layout title="Grégory Gérard - Développeur web full-stack" className="cursor-disable">
   <Spotlight client:only="react" />
 
   <Section>
@@ -38,6 +38,9 @@ cases.sort((a, b) => a.frontmatter.order - b.frontmatter.order);
     <div class="flex gap-6 text-zinc-400">
       <RoundedHoverLink href="https://www.linkedin.com/in/gregoryger/" target="_blank">
         <Linkedin size={24} />
+      </RoundedHoverLink>
+      <RoundedHoverLink href="https://github.com/Gregory-Gerard/gregory-gerard.dev" target="_blank">
+        <GitHub size={24} />
       </RoundedHoverLink>
       <RoundedHoverLink href="mailto:contact@gregory-gerard.dev" target="_blank">
         <Mail size={24} />

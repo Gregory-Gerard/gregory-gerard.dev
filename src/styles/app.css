@@ -1,0 +1,3 @@
+.cursor-disable, .cursor-disable * {
+    cursor: none !important;
+}
