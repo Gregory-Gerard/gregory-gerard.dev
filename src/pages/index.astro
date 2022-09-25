@@ -40,7 +40,7 @@ articles.sort((a, b) => a.frontmatter.publishedAt.getTime() - b.frontmatter.publ
     <Avatar className="w-24 h-24" />
     <h1 class="max-w-3xl text-6xl tracking-tight font-bold">
       Développeur web full-stack chez{' '}
-      <RoundedHoverLink href="https://la-boite-immo.com" target="_blank" rel="noreferrer">
+      <RoundedHoverLink href="https://la-boite-immo.com" target="_blank" rel="noreferrer" title="Site de La Boîte Immo">
         <LaBoiteImmoIcon className="inline" />
       </RoundedHoverLink>
     </h1>
@@ -54,13 +54,17 @@ articles.sort((a, b) => a.frontmatter.publishedAt.getTime() - b.frontmatter.publ
     </p>
 
     <div class="flex gap-6 text-zinc-400">
-      <RoundedHoverLink href="https://www.linkedin.com/in/gregoryger/" target="_blank">
+      <RoundedHoverLink href="https://www.linkedin.com/in/gregoryger/" target="_blank" title="Mon profil Linkedin">
         <Linkedin size={24} />
       </RoundedHoverLink>
-      <RoundedHoverLink href="https://github.com/Gregory-Gerard/gregory-gerard.dev" target="_blank">
+      <RoundedHoverLink
+        href="https://github.com/Gregory-Gerard/gregory-gerard.dev"
+        target="_blank"
+        title="Mon profil Github"
+      >
         <GitHub size={24} />
       </RoundedHoverLink>
-      <RoundedHoverLink href="mailto:contact@gregory-gerard.dev" target="_blank">
+      <RoundedHoverLink href="mailto:contact@gregory-gerard.dev" target="_blank" title="Me contacter par email">
         <Mail size={24} />
       </RoundedHoverLink>
     </div>
