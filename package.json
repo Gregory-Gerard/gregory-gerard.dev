@@ -9,7 +9,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "lint": "tsc --noEmit --strict true && eslint --ext \".js,.ts,.tsx,.jsx,.astro\" --ignore-path .gitignore --fix src"
+    "lint": "tsc --noEmit --strict true --jsx preserve && eslint --ext \".js,.ts,.tsx,.jsx,.astro\" --ignore-path .gitignore --fix src"
   },
   "dependencies": {
     "@astrojs/react": "^1.1.3",
