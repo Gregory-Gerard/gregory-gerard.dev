@@ -1,5 +1,5 @@
-import { format } from 'date-fns';
-import { fr } from 'date-fns/locale';
+import format from 'date-fns/format/index.js';
+import fr from 'date-fns/locale/fr/index.js';
 import ArticleFrontmatter from '../types/ArticleFrontmatter';
 
 export default function ArticlePreview(
