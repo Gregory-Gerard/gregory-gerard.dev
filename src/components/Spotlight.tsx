@@ -22,7 +22,10 @@ export default function Spotlight() {
 
   return (
     (x && y && (
-      <div className="hidden xl:block fixed w-screen h-screen overflow-hidden pointer-events-none inset-0 z-10">
+      <div
+        className="hidden xl:block fixed w-screen h-screen overflow-hidden pointer-events-none inset-0 z-10"
+        aria-hidden="true"
+      >
         <div
           className={`absolute w-6 h-6 rounded-full bg-zinc-100/80 pointer-events-none -translate-x-1/2 -translate-y-1/2 transition-[transform,background-color] duration-200 ${
             isHovering ? 'scale-150 !bg-zinc-100/40' : ''
