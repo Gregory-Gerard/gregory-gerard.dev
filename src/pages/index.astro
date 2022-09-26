@@ -8,7 +8,6 @@ import Avatar from '../components/Avatar';
 import CaseStudy from '../components/CaseStudy';
 import Section from '../components/Section';
 import Resume from '../components/Resume';
-import Spotlight from '../components/Spotlight';
 import ArticlePreview from '../components/ArticlePreview';
 import React from 'react';
 import { MarkdownInstance } from 'astro';
@@ -33,9 +32,7 @@ const articles = (await Astro.glob<ArticleFrontmatter>('../pages/articles/*.md')
 articles.sort((a, b) => a.frontmatter.publishedAt.getTime() - b.frontmatter.publishedAt.getTime());
 ---
 
-<Layout title="Grégory Gérard - Développeur web full-stack" className="cursor-disable">
-  <Spotlight client:only="react" />
-
+<Layout title="Grégory Gérard - Développeur web full-stack">
   <Section>
     <Avatar className="w-24 h-24" />
     <h1 class="max-w-3xl text-6xl tracking-tight font-bold">

@@ -1,4 +1,5 @@
 ---
+import Spotlight from '../components/Spotlight';
 import '../styles/app.css';
 
 export interface Props {
@@ -18,7 +19,9 @@ const { title, className } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body>
+  <body class="cursor-disable">
+    <Spotlight client:only="react" />
+
     <main class={`min-h-screen bg-zinc-900 text-zinc-50 ${className}`}>
       <div class="max-w-7xl mx-auto py-8 lg:py-16 px-4 lg:px-8">
         <slot />
