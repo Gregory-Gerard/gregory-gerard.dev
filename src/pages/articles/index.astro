@@ -1,5 +1,49 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { MarkdownInstance } from 'astro';
+import ArticleFrontmatter from '../../types/ArticleFrontmatter';
+import ArticlePreview from '../../components/ArticlePreview';
+import Section from '../../components/Section';
+import Breadcrumb from '../../components/Breadcrumb';
+
+const articles = (await Astro.glob<ArticleFrontmatter>('./*.md'))
+  .map((article) => ({
+    ...article,
+    frontmatter: {
+      ...article.frontmatter,
+      publishedAt: article.frontmatter.publishedAt ? new Date(article.frontmatter.publishedAt) : undefined,
+    },
+  }))
+  .filter(
+    (article): article is MarkdownInstance<ArticleFrontmatter & { publishedAt: Date }> =>
+      !!article.frontmatter.publishedAt && !article.file.includes('/index.astro')
+  );
+
+articles.sort((a, b) => a.frontmatter.publishedAt.getTime() - b.frontmatter.publishedAt.getTime());
 ---
 
-<Layout title="Articles">En cours</Layout>
+<Layout title="Articles">
+  <div class="flex mb-16">
+    <Breadcrumb pages={[{ name: 'Articles' }]} />
+  </div>
+
+  <h1 class="lg:text-6xl font-bold leading-loose tracking-tight mb-8">Tous mes articles</h1>
+  <p class="leading-loose tracking-tight text-zinc-400 mb-16">
+    Durant mon temps libre, j'écris des articles sur les sujets qui m'intéressent : développement, infra, tech...
+  </p>
+
+  <div class="flex flex-col gap-8">
+    <Section>
+      {
+        articles.map((article) => (
+          <ArticlePreview
+            title={article.frontmatter.title}
+            metaDescription={article.frontmatter.metaDescription}
+            url={article.url}
+            publishedAt={article.frontmatter.publishedAt}
+          />
+        ))
+      }
+    </Section>
+  </div>
+</Layout>
