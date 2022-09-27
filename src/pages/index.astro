@@ -35,8 +35,8 @@ articles.sort((a, b) => a.frontmatter.publishedAt.getTime() - b.frontmatter.publ
 <Layout title="Grégory Gérard - Développeur web full-stack">
   <Section>
     <Avatar className="w-24 h-24" />
-    <h1 class="max-w-3xl text-6xl tracking-tight font-bold">
-      Développeur web full-stack chez{' '}
+    <h1 class="max-w-3xl text-5xl sm:text-6xl tracking-tight font-bold">
+      Développeur web full-stack chez
       <RoundedHoverLink href="https://la-boite-immo.com" target="_blank" rel="noreferrer" title="Site de La Boîte Immo">
         <LaBoiteImmoIcon className="inline" />
       </RoundedHoverLink>
@@ -88,8 +88,8 @@ articles.sort((a, b) => a.frontmatter.publishedAt.getTime() - b.frontmatter.publ
     </div>
   </Section>
 
-  <div class="grid grid-cols-1 xl:grid-cols-3 gap-4">
-    <Section title="Mes notes" className="col-span-2">
+  <div class="grid grid-cols-1 lg:grid-cols-3 lg:gap-4">
+    <Section title="Mes notes" className="col-span-2 lg:pr-4">
       {
         articles.map((article) => (
           <ArticlePreview
@@ -103,7 +103,7 @@ articles.sort((a, b) => a.frontmatter.publishedAt.getTime() - b.frontmatter.publ
 
       <a
         href="/articles"
-        class="self-start px-6 py-2 bg-zinc-800/50 hover:bg-zinc-800 font-medium text-sm tracking-wide rounded-2xl transition-colors"
+        class="sm:self-start px-6 py-2 bg-zinc-800/50 hover:bg-zinc-800 text-center sm:text-left font-medium text-sm tracking-wide rounded-2xl transition-colors"
       >
         En voir plus
       </a>

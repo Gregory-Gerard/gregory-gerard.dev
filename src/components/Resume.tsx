@@ -10,9 +10,9 @@ function Row(props: { logo: React.ReactNode; company: string; roles: Record<stri
       <div className="w-full">
         <strong className="block mb-2 text-zinc-100">{props.company}</strong>
 
-        <div className="flex flex-col gap-2 w-ful text-xs">
+        <div className="flex flex-col gap-4 sm:gap-2 w-ful text-xs">
           {Object.entries(props.roles).map(([role, time]) => (
-            <div className="flex justify-between" key={time}>
+            <div className="flex flex-col sm:flex-row gap-1 sm:gap-0 justify-between" key={time}>
               <span className="text-zinc-400">{role}</span>
               <span className="text-zinc-500">{time}</span>
             </div>
