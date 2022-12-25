@@ -6,9 +6,9 @@ export default function Breadcrumb(props: { pages: NonEmptyArray<{ name: string;
   const lastPage = props.pages.pop();
 
   return (
-    <div className="flex items-center gap-4">
+    <div className="flex items-center gap-8 w-full pb-8 border-b border-zinc-800">
       <a href="/" title="Page d'accueil">
-        <Avatar className="h-12 w-12" />
+        <Avatar className="h-16 w-16" />
       </a>
 
       <nav className="flex px-5 py-3 rounded-2xl bg-zinc-800/50 shadow-outline" aria-label="Breadcrumb">
