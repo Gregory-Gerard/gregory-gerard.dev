@@ -75,13 +75,7 @@ articles.sort((a, b) => a.frontmatter.publishedAt.getTime() - b.frontmatter.publ
           const icon = (await import(`../components/icons/${item.frontmatter.icon}.tsx`)).default as React.FC;
 
           return (
-            <CaseStudy
-              title={item.frontmatter.title}
-              headline={item.frontmatter.headline}
-              background={item.frontmatter.background}
-              icon={icon}
-              url={item.url}
-            />
+            <CaseStudy title={item.frontmatter.title} headline={item.frontmatter.headline} icon={icon} url={item.url} />
           );
         })
       }

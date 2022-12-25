@@ -3,13 +3,11 @@ import React from 'react';
 export default function CaseStudy({
   title,
   headline,
-  background,
   icon,
   url,
 }: {
   title: string;
   headline: string;
-  background: string;
   icon: React.FC<React.HTMLAttributes<Element>>;
   url: string | undefined;
 }) {
@@ -18,8 +16,7 @@ export default function CaseStudy({
   return (
     <a
       href={url || '#'}
-      className="flex flex-col items-center gap-4 rounded-2xl overflow-hidden px-8 py-10 shadow-outline text-center bg-cover bg-center transition-transform hover:scale-[1.01] focus:scale-105"
-      style={{ backgroundImage: `url(${background})` }}
+      className="flex flex-col items-center gap-4 rounded-2xl overflow-hidden px-8 py-10 shadow-outline text-center bg-zinc-800/20 transition-transform hover:scale-[1.01] focus:scale-105"
     >
       {<Icon className="w-16 h-16" />}
       <div className="flex flex-col gap-1">
