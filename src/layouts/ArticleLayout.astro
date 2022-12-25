@@ -1,0 +1,25 @@
+---
+import Breadcrumb from '../components/Breadcrumb';
+import Layout from './Layout.astro';
+const { content } = Astro.props;
+---
+
+<Layout title={content.title}>
+  <div class="flex mb-12">
+    <Breadcrumb pages={[{ name: 'Articles', url: '/articles' }, { name: content.title }]} />
+  </div>
+
+  <article>
+    <header class="flex flex-col gap-2 mb-8">
+      <h1 class="text-4xl sm:text-6xl font-bold tracking-tight">{content.title}</h1>
+      <h2 class="text-md sm:text-lg font-medium text-zinc-400 tracking-wide">{content.headline}</h2>
+      <time class="text-xs text-zinc-500 tracking-wider"
+        >Publié le {new Date(content.publishedAt).toLocaleString()}
+      </time>
+    </header>
+
+    <section class="prose prose-zinc !prose-invert max-w-none">
+      <slot />
+    </section>
+  </article>
+</Layout>

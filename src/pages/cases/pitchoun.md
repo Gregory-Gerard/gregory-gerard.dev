@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/Layout.astro
+layout: ../../layouts/CaseLayout.astro
 title: Pitchoun Médias
 headline: Plateforme de TV & Radio
 icon: PitchounIcon

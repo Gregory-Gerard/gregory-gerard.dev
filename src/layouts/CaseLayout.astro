@@ -1,0 +1,29 @@
+---
+import React from 'react';
+import Breadcrumb from '../components/Breadcrumb';
+import Layout from './Layout.astro';
+const { content } = Astro.props;
+
+/* @vite-ignore */
+const Icon = (await import(`../components/icons/${content.icon}.tsx`)).default as React.FC<
+  React.HTMLAttributes<Element>
+>;
+---
+
+<Layout title={content.title}>
+  <div class="flex mb-12">
+    <Breadcrumb pages={[{ name: content.title }]} />
+  </div>
+
+  <article>
+    <header class="flex flex-col gap-2 mb-8">
+      <Icon className="w-16 h-16" />
+      <h1 class="text-4xl sm:text-6xl font-bold tracking-tight">{content.title}</h1>
+      <h2 class="text-md sm:text-lg font-medium text-zinc-400 tracking-wide">{content.headline}</h2>
+    </header>
+
+    <section class="!prose prose-zinc !prose-invert !max-w-none">
+      <slot />
+    </section>
+  </article>
+</Layout>
