@@ -5,12 +5,12 @@ const { content } = Astro.props;
 ---
 
 <Layout title={content.title}>
-  <div class="flex mb-12">
+  <div class="flex max-w-prose mx-auto mb-12">
     <Breadcrumb pages={[{ name: 'Articles', url: '/articles' }, { name: content.title }]} />
   </div>
 
   <article>
-    <header class="flex flex-col gap-2 mb-8">
+    <header class="flex flex-col gap-2 max-w-prose mx-auto mb-8">
       <h1 class="text-4xl sm:text-6xl font-bold tracking-tight">{content.title}</h1>
       <h2 class="text-md sm:text-lg font-medium text-zinc-400 tracking-wide">{content.headline}</h2>
       <time class="text-xs text-zinc-500 tracking-wider"
@@ -18,8 +18,12 @@ const { content } = Astro.props;
       </time>
     </header>
 
-    <section class="prose prose-zinc !prose-invert max-w-none">
+    <section class="!prose prose-zinc !prose-invert prose-img:rounded-md prose-img:shadow-xl mx-auto">
       <slot />
     </section>
   </article>
+
+  <footer class="mt-16 max-w-prose mx-auto" slot="footer">
+    <span class="text-xs text-zinc-500">&copy; {new Date().getFullYear()} Grégory Gérard &mdash; SIRET 91037792800015</span>
+  </footer>
 </Layout>

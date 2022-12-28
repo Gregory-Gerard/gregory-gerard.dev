@@ -22,13 +22,15 @@ const { title, className } = Astro.props;
   <body class="cursor-disable">
     <Spotlight client:only="react" />
 
-    <main class={`min-h-screen bg-zinc-900 text-zinc-50 ${className}`}>
+    <main class={`min-h-screen bg-zinc-900 text-zinc-50 ${className || ''}`}>
       <div class="max-w-7xl mx-auto py-8 lg:py-16 px-4 lg:px-8">
         <slot />
 
-        <footer class="mt-16 text-xs text-zinc-500">
-          &copy; {new Date().getFullYear()} Grégory Gérard &mdash; SIRET 91037792800015
-        </footer>
+        <slot name="footer">
+          <footer class="mt-16 text-xs text-zinc-500">
+            &copy; {new Date().getFullYear()} Grégory Gérard &mdash; SIRET 91037792800015
+          </footer>
+        </slot>
       </div>
     </main>
   </body>
