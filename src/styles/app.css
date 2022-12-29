@@ -1,3 +1,5 @@
-.cursor-disable, .cursor-disable * {
-    cursor: none !important;
+@media screen and (min-width: theme('screens.sm')) {
+    .cursor-disable, .cursor-disable * {
+        cursor: none !important;
+    }
 }
