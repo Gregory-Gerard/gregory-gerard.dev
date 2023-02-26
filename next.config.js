@@ -6,7 +6,7 @@ const nextConfig = {
   },
   modularizeImports: {
     'react-feather': {
-      transform: 'react-feather/dist/icons/{{member}}',
+      transform: 'react-feather/dist/icons/{{ lowerCase member }}',
     },
   },
 };
