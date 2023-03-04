@@ -1,33 +1,32 @@
 import React from 'react';
-import { getCase, getCases } from '@/services/case';
 import { notFound } from 'next/navigation';
 import Breadcrumb from '@/components/Breadcrumb';
-import * as Icons from '@/components/icons';
 import Footer from '@/components/Footer';
 import MdxRenderer from '@/components/MdxRenderer';
+import { getArticle, getArticles } from '@/services/article';
 
 export const revalidate = Infinity;
 
 export default function Page({ params: { slug } }: { params: { slug: string } }) {
-  const item = getCase(slug);
+  const item = getArticle(slug);
 
   if (!item) {
     notFound();
   }
 
-  const Icon = Icons[item.frontmatter.icon as keyof typeof Icons];
-
   return (
     <>
       <div className="flex max-w-prose mx-auto mb-12">
-        <Breadcrumb pages={[{ name: item.frontmatter.title }]} />
+        <Breadcrumb pages={[{ name: 'Articles', url: '/articles' }, { name: item.frontmatter.title }]} />
       </div>
 
       <article>
         <header className="flex flex-col gap-2 max-w-prose mx-auto mb-8">
-          <Icon className="w-16 h-16" />
           <h1 className="text-4xl sm:text-6xl font-bold tracking-tight">{item.frontmatter.title}</h1>
           <h2 className="text-md sm:text-lg font-medium text-zinc-400 tracking-wide">{item.frontmatter.headline}</h2>
+          <time className="text-xs text-zinc-500 tracking-wider">
+            Publié le {new Date(item.frontmatter.publishedAt).toLocaleString()}
+          </time>
         </header>
 
         <section className="!prose prose-zinc !prose-invert prose-img:rounded-md prose-img:shadow-xl mx-auto">
@@ -43,9 +42,9 @@ export default function Page({ params: { slug } }: { params: { slug: string } })
 }
 
 export function generateStaticParams() {
-  const cases = getCases();
+  const articles = getArticles();
 
-  return cases.map(({ file }) => ({
+  return articles.map(({ file }) => ({
     slug: file.replace(/\.md$/, ''),
   }));
 }

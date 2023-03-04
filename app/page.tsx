@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from 'react';
+import React from 'react';
 import { GitHub, Linkedin, Mail } from 'react-feather';
 import Avatar from '@/components/Avatar';
 import RoundedLink from '@/components/RoundedLink';
@@ -11,6 +11,8 @@ import { getArticles } from '@/services/article';
 import ArticlePreview from '@/components/ArticlePreview';
 import Resume from '@/components/Resume';
 import Footer from '@/components/Footer';
+import Section from '@/components/Section';
+import Link from 'next/link';
 
 export const revalidate = Infinity;
 
@@ -77,17 +79,17 @@ export default async function Home() {
               key={article.frontmatter.title}
               title={article.frontmatter.title}
               metaDescription={article.frontmatter.metaDescription}
-              url={'test'}
+              url={`articles/${article.file.replace(/\.md$/, '')}`}
               publishedAt={article.frontmatter.publishedAt}
             />
           ))}
 
-          <a
-            href="/articles"
+          <Link
+            href={'/articles'}
             className="sm:self-start px-6 py-2 bg-zinc-800/50 hover:bg-zinc-800 text-center sm:text-left font-medium text-sm tracking-wide rounded-2xl transition-colors"
           >
             En voir plus
-          </a>
+          </Link>
         </Section>
 
         <aside className="flex flex-col gap-6 p-6 rounded-2xl shadow-outline">
@@ -101,15 +103,3 @@ export default async function Home() {
     </>
   );
 }
-
-const Section = (props: PropsWithChildren<React.ComponentPropsWithoutRef<'section'>>) => {
-  const { children, className, title, ...rest } = props;
-
-  return (
-    <section className={`flex flex-col gap-8 mb-16 ${className}`} {...rest}>
-      {title && <h2 className="flex items-center gap-2 text-lg font-medium text-zinc-100">{title}</h2>}
-
-      {children}
-    </section>
-  );
-};
