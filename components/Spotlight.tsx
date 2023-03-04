@@ -25,7 +25,7 @@ export default function Spotlight() {
   return (
     (x && y && (
       <div
-        className="hidden xl:block fixed w-screen h-screen overflow-hidden pointer-events-none inset-0 z-10"
+        className="[@media(hover:none)]:hidden xl:block fixed w-screen h-screen overflow-hidden pointer-events-none inset-0 z-10"
         aria-hidden="true"
       >
         <div
