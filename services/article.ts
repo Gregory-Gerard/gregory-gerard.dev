@@ -8,15 +8,20 @@ export const getArticles = () => {
   return fs
     .readdirSync(path.resolve(process.cwd(), 'app/articles/'))
     .filter((filename) => filename.match(/\.mdx?$/i))
-    .map((file) =>
-      fs.readFileSync(path.resolve(process.cwd(), 'app/articles/', file), {
-        encoding: 'utf8',
-      })
-    )
-    .map((content) => matter(content))
-    .map((item) => ({
-      frontmatter: Article.parse(item.data),
-      content: item.content,
+    .map((file) => ({
+      content: fs.readFileSync(
+        path.resolve(process.cwd(), 'app/articles/', file),
+        {
+          encoding: 'utf8',
+        }
+      ),
+      file,
+    }))
+    .map(({ content, file }) => ({ matter: matter(content), file }))
+    .map(({ matter, file }) => ({
+      frontmatter: Article.parse(matter.data),
+      content: matter.content,
+      file,
     }))
     .sort(
       (a, b) =>
