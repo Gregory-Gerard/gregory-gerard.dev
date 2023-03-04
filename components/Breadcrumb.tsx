@@ -11,9 +11,9 @@ export default function Breadcrumb(props: {
 
   return (
     <div className="flex flex-col sm:flex-row sm:items-center gap-8 w-full pb-8 border-b border-zinc-800">
-      <a href="/" title="Page d'accueil" className="shrink-0">
+      <Link href="/" title="Page d'accueil" className="shrink-0">
         <Avatar className="h-16 w-16" />
-      </a>
+      </Link>
 
       <nav
         className="flex px-5 py-3 rounded-2xl bg-zinc-800/50 shadow-outline"

@@ -1,6 +1,7 @@
 import format from 'date-fns/format/index.js';
 import fr from 'date-fns/locale/fr/index.js';
 import { Article } from '@/types/article';
+import Link from 'next/link';
 
 export default function ArticlePreview(
   props: Omit<Article, 'layout' | 'headline'> & {
@@ -9,7 +10,7 @@ export default function ArticlePreview(
   }
 ) {
   return (
-    <a
+    <Link
       href={props.url || '#'}
       className="relative before:block before:absolute before:-inset-3 sm:before:-inset-4 before:rounded-2xl before:scale-95 hover:before:scale-100 before:opacity-0 hover:before:opacity-100 before:transition-all before:pointer-events-none before:bg-zinc-800/50 before:shadow-outline"
     >
@@ -27,6 +28,6 @@ export default function ArticlePreview(
           {format(props.publishedAt, "'le' dd MMMM yyyy", { locale: fr })}
         </time>
       </article>
-    </a>
+    </Link>
   );
 }
