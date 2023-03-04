@@ -24,3 +24,24 @@ export const getArticles = () => {
         b.frontmatter.publishedAt.getTime()
     );
 };
+
+export const getArticle = (
+  slug: string
+): { frontmatter: Article; content: string } | null => {
+  const file = path.resolve(process.cwd(), 'app/articles/', `${slug}.md`);
+
+  if (!fs.existsSync(file)) {
+    return null;
+  }
+
+  const resolved = matter(
+    fs.readFileSync(path.resolve(process.cwd(), 'app/articles/', file), {
+      encoding: 'utf8',
+    })
+  );
+
+  return {
+    frontmatter: Article.parse(resolved.data),
+    content: resolved.content,
+  };
+};
