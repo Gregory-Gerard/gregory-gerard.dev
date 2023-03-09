@@ -1,6 +1,6 @@
 import React from 'react';
 import './globals.css';
-import { Inter } from '@next/font/google';
+import { Inter } from 'next/font/google';
 import Spotlight from '@/components/Spotlight';
 
 const inter = Inter({

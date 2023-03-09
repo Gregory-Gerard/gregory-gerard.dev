@@ -1,4 +1,6 @@
 import React from 'react';
+import Link from 'next/link';
+import { Metadata } from 'next';
 import { GitHub, Linkedin, Mail } from 'react-feather';
 import Avatar from '@/components/Avatar';
 import RoundedLink from '@/components/RoundedLink';
