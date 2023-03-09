@@ -14,7 +14,13 @@ import ArticlePreview from '@/components/ArticlePreview';
 import Resume from '@/components/Resume';
 import Footer from '@/components/Footer';
 import Section from '@/components/Section';
-import Link from 'next/link';
+import { oldness } from '@/utils/oldness';
+
+export const metadata: Metadata = {
+  title: 'Grégory — Développeur web',
+  description: `Je suis Grégory, un développeur web full-stack de ${oldness()} ans basé à Hyères.`,
+  icons: '/favicon.svg',
+};
 
 export const revalidate = Infinity;
 
@@ -34,8 +40,8 @@ export default async function Home() {
         </h1>
 
         <p className="max-w-3xl leading-relaxed text-zinc-400">
-          Je suis Grégory, un développeur web full-stack de {new Date().getFullYear() - 1999} ans, actuellement sur
-          Hyères. En ce moment je suis Tech Lead chez&nbsp;
+          Je suis Grégory, un développeur web full-stack de {oldness()} ans, actuellement sur Hyères. En ce moment je
+          suis Tech Lead chez&nbsp;
           <UnderlinedLink href="https://la-boite-immo.com" target="_blank" rel="noreferrer">
             La Boîte Immo
           </UnderlinedLink>
