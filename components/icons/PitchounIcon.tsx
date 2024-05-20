@@ -6,7 +6,7 @@ export default function PitchounIcon(
   props: Omit<
     React.ComponentPropsWithoutRef<typeof Image>,
     'src' | 'alt' | 'placeholder'
-  >
+  >,
 ) {
   return (
     <Image

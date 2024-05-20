@@ -1,7 +1,7 @@
 import React, { ComponentPropsWithoutRef, PropsWithChildren } from 'react';
 
 export default function Section(
-  props: PropsWithChildren<ComponentPropsWithoutRef<'section'>>
+  props: PropsWithChildren<ComponentPropsWithoutRef<'section'>>,
 ) {
   const { children, className, title, ...rest } = props;
 

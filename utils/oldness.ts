@@ -8,6 +8,6 @@ export const oldness = (): number => {
   const birthdate = '1999-09-02';
 
   return Math.floor(
-    Math.abs((new Date(birthdate).getTime() - new Date().getTime()) / year)
+    Math.abs((new Date(birthdate).getTime() - new Date().getTime()) / year),
   );
 };

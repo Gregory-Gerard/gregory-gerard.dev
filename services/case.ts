@@ -13,7 +13,7 @@ export const getCases = () => {
         path.resolve(process.cwd(), 'app/cases/', file),
         {
           encoding: 'utf8',
-        }
+        },
       ),
       file,
     }))
@@ -27,7 +27,7 @@ export const getCases = () => {
 };
 
 export const getCase = (
-  slug: string
+  slug: string,
 ): { frontmatter: Case; content: string } | null => {
   const file = path.resolve(process.cwd(), 'app/cases/', `${slug}.md`);
 
@@ -38,7 +38,7 @@ export const getCase = (
   const resolved = matter(
     fs.readFileSync(path.resolve(process.cwd(), 'app/cases/', file), {
       encoding: 'utf8',
-    })
+    }),
   );
 
   return {

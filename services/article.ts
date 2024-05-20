@@ -13,7 +13,7 @@ export const getArticles = () => {
         path.resolve(process.cwd(), 'app/articles/', file),
         {
           encoding: 'utf8',
-        }
+        },
       ),
       file,
     }))
@@ -26,12 +26,12 @@ export const getArticles = () => {
     .sort(
       (a, b) =>
         a.frontmatter.publishedAt.getTime() -
-        b.frontmatter.publishedAt.getTime()
+        b.frontmatter.publishedAt.getTime(),
     );
 };
 
 export const getArticle = (
-  slug: string
+  slug: string,
 ): { frontmatter: Article; content: string } | null => {
   const file = path.resolve(process.cwd(), 'app/articles/', `${slug}.md`);
 
@@ -42,7 +42,7 @@ export const getArticle = (
   const resolved = matter(
     fs.readFileSync(path.resolve(process.cwd(), 'app/articles/', file), {
       encoding: 'utf8',
-    })
+    }),
   );
 
   return {

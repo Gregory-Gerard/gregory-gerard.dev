@@ -1,5 +1,5 @@
-import format from 'date-fns/format/index.js';
-import fr from 'date-fns/locale/fr/index.js';
+import { format } from 'date-fns/format';
+import { fr } from 'date-fns/locale/fr';
 import { Article } from '@/types/article';
 import Link from 'next/link';
 
@@ -7,7 +7,7 @@ export default function ArticlePreview(
   props: Omit<Article, 'layout' | 'headline'> & {
     url: string | undefined;
     publishedAt: Date;
-  }
+  },
 ) {
   return (
     <Link

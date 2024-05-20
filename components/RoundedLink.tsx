@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default function RoundedLink(
-  props: React.ComponentPropsWithoutRef<'a'>
+  props: React.ComponentPropsWithoutRef<'a'>,
 ) {
   return (
     <a
