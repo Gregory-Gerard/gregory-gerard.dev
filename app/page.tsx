@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-import { Metadata } from 'next';
 import { GitHub, Linkedin, Mail } from 'react-feather';
 import Avatar from '@/components/Avatar';
 import RoundedLink from '@/components/RoundedLink';
@@ -15,12 +14,6 @@ import Resume from '@/components/Resume';
 import Footer from '@/components/Footer';
 import Section from '@/components/Section';
 import { oldness } from '@/utils/oldness';
-
-export const metadata: Metadata = {
-  title: 'Grégory — Développeur web',
-  description: `Je suis Grégory, un développeur web full-stack de ${oldness()} ans basé à Hyères.`,
-  icons: '/favicon.svg',
-};
 
 export default async function Home() {
   const cases = getCases();

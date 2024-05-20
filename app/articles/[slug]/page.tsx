@@ -4,8 +4,27 @@ import Breadcrumb from '@/components/Breadcrumb';
 import Footer from '@/components/Footer';
 import MdxRenderer from '@/components/MdxRenderer';
 import { getArticle, getArticles } from '@/services/article';
+import { Metadata } from 'next';
 
-export default function Page({ params: { slug } }: { params: { slug: string } }) {
+type Props = {
+  params: { slug: string };
+};
+
+export async function generateMetadata({ params: { slug } }: Props): Promise<Metadata> {
+  const item = getArticle(slug);
+
+  if (!item) {
+    notFound();
+  }
+
+  return {
+    title: item.frontmatter.title,
+    description: item.frontmatter.metaDescription,
+    metadataBase: new URL('https://gregory-gerard.dev'),
+  };
+}
+
+export default function Page({ params: { slug } }: Props) {
   const item = getArticle(slug);
 
   if (!item) {

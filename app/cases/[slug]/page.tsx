@@ -5,8 +5,26 @@ import Breadcrumb from '@/components/Breadcrumb';
 import * as Icons from '@/components/icons';
 import Footer from '@/components/Footer';
 import MdxRenderer from '@/components/MdxRenderer';
+import { Metadata } from 'next';
 
-export default function Page({ params: { slug } }: { params: { slug: string } }) {
+type Props = {
+  params: { slug: string };
+};
+
+export async function generateMetadata({ params: { slug } }: Props): Promise<Metadata> {
+  const item = getCase(slug);
+
+  if (!item) {
+    notFound();
+  }
+
+  return {
+    title: item.frontmatter.title,
+    description: item.frontmatter.headline,
+  };
+}
+
+export default function Page({ params: { slug } }: Props) {
   const item = getCase(slug);
 
   if (!item) {
