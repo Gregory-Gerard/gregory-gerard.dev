@@ -5,6 +5,7 @@ import Footer from '@/components/Footer';
 import MdxRenderer from '@/components/MdxRenderer';
 import { getArticle, getArticles } from '@/services/article';
 import { Metadata } from 'next';
+import Image from 'next/image';
 
 type Props = {
   params: { slug: string };
@@ -44,6 +45,14 @@ export default function Page({ params: { slug } }: Props) {
           <time className="text-xs text-zinc-500 tracking-wider">
             Publié le {new Date(item.frontmatter.publishedAt).toLocaleString()}
           </time>
+
+          <Image
+            src={`/articles/${item.frontmatter.image}`}
+            alt={item.frontmatter.title}
+            width={1200}
+            height={300}
+            className="object-cover w-[1200px] h-[300px] bg-zinc-950 rounded-md my-12 md:scale-110 opacity-50"
+          />
         </header>
 
         <section className="!prose prose-zinc !prose-invert prose-img:rounded-md prose-img:shadow-xl mx-auto">

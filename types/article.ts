@@ -4,6 +4,7 @@ export const Article = z.object({
   title: z.string(),
   headline: z.string(),
   metaDescription: z.string(),
+  image: z.string(),
   publishedAt: z.date(),
 });
 

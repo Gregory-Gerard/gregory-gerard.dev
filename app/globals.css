@@ -9,7 +9,7 @@
 }
 
 .shiki {
-    @apply relative !bg-zinc-950 rounded-md p-4 font-mono text-sm;
+    @apply relative !bg-zinc-950 rounded-md p-4 font-mono text-sm overflow-x-auto;
 }
 
 .shiki code {

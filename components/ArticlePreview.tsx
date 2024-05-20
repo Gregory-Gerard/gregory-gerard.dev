@@ -4,7 +4,7 @@ import { Article } from '@/types/article';
 import Link from 'next/link';
 
 export default function ArticlePreview(
-  props: Omit<Article, 'layout' | 'headline'> & {
+  props: Omit<Article, 'layout' | 'headline' | 'image'> & {
     url: string | undefined;
     publishedAt: Date;
   },

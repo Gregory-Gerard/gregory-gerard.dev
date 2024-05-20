@@ -2,6 +2,7 @@
 title: ESLint in a Monorepo
 headline: Optimize your monorepo by centralizing ESLint configuration
 metaDescription: Optimize your monorepo by centralizing ESLint configuration. Learn to create and manage a shared ESLint config, ensuring consistent code quality and reducing maintenance across multiple workspaces.
+image: 1337-93d693d8-16db-11ef-8c3d-2e5a295bcd11.jpg
 publishedAt: 2024-05-20T11:52:16Z
 ---
 
