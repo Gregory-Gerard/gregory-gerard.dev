@@ -40,7 +40,8 @@ export default function Resume() {
         logo={<LaBoiteImmoLogo className="w-6 h-6" />}
         company="La Boîte Immo"
         roles={{
-          'Tech Lead': 'Sept. 2022 — En cours',
+          'Lead Dev': 'Jan. 2023 — En cours',
+          'Tech Lead': 'Sept. 2022 — Jan. 2023',
           'Développeur web senior': 'Juin 2022 — Sept. 2022',
           'Développeur web': 'Juill. 2021 — Juin 2022',
         }}

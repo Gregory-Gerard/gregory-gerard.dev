@@ -1,14 +1,13 @@
 ---
-layout: ../../layouts/CaseLayout.astro
 title: Pitchoun Médias
 headline: Plateforme de TV & Radio
 icon: PitchounIcon
 order: 2
 ---
 
-<a href="https://pitchoun-medias.fr" target="_blank">Pitchoun Médias</a> est un groupe média indépendant qui cible les enfants de 4 à 12 ans et leur famille. Il propose du contenu ludo-éducatif et musical à travers sa télévision, ses radios, ses offres numériques et son service événementiel. Le groupe compte deux chaînes de télévision, plusieurs radios déclinées en différentes versions et une offre digitale comprenant des applications, des podcasts et une offre de replay vidéo. En plus de ces activités, Pitchoun Médias organise également des événements pour les enfants et les familles.
+## Présentation
 
-![Site web Pitchoun](/assets/cases/pitchoun/website.jpg)
+<a href="https://pitchoun-medias.fr" target="_blank">Pitchoun Médias</a> est un groupe média indépendant qui cible les enfants de 4 à 12 ans et leur famille. Il propose du contenu ludo-éducatif et musical à travers sa télévision, ses radios, ses offres numériques et son service événementiel. Le groupe compte deux chaînes de télévision, plusieurs radios déclinées en différentes versions et une offre digitale comprenant des applications, des podcasts et une offre de replay vidéo. En plus de ces activités, Pitchoun Médias organise également des événements pour les enfants et les familles.
 
 Le groupe propose des offres d'abonnement permettant à ses utilisateurs d'accéder à du contenu supplémentaire et exclusif. L'une de ces offres est MyPitchoun, qui donne accès à du contenu ludo-éducatif pour les enfants et leur famille, ainsi qu'à des fonctionnalités de suivi de l'apprentissage de l'enfant. L'offre MyPitchoun+ inclut tous les avantages de MyPitchoun, ainsi qu'un accès à du contenu supplémentaire, comme des épisodes de télévision en avant-première, un **live TV 24h/24 7j/7** et des podcasts exclusifs.
 
@@ -23,13 +22,19 @@ J'accompagne Pitchoun Médias depuis maintenant **des années** sur à peu près
   Pour la partie live TV, j'ai utilisé <a href="https://www.nginx.com" target="_blank">NGINX</a> qui est le point d'entrée pour le traitement du flux RTMP. La partie traitement est réalisée avec <a href="https://ffmpeg.org" target="_blank">FFmpeg</a>, un flux RTMP n'étant pas consommable en web, il est obligatoire de passer par une étape d'encodage grâce à FFmpeg pour une conversion en HLS (format compatible en web)
 - **Autres** : <a href="https://github.com/louislam/uptime-kuma" target="_blank">Uptime Kuma</a> et <a href="https://github.com/netdata/netdata" target="_blank">Netdata</a> pour le monitoring de l'infrastructure et beaucoup de script bash pour automatiser la maintenance 😅
 
+## Stack
+
+### Site web
+
 Pour la partie site web, rien de très intéressant techniquement, le plus complexe a été **l'intégration des prestataires externes**, adapter le système d'authentification de Laravel avec des <a href="https://laravel.com/docs/9.x/authentication#adding-custom-user-providers" target="_blank">providers personnalisés</a> (gestion des comptes externalisées chez Kinow), gérer correctement le rate limiting, la gestion du cache...
+
+### Live TV
 
 Concernant le live TV, comme expliqué précédemment, le groupe gère via sa régie un flux live qui est disponible **24h/24 7j/7**, composé des différents programmes, comme une chaîne TV classique. De mon côte, j'ai mis à disposition un point d'entrée via NGINX pour que la régie pousse ce flux RTMP vers moin point d'entrée. Ce fut très intéressant car travailler dans la vidéo dans le web est compliqué : **peu de documentation**, **beaucoup d'outils propriétaires**, **le traitement est lourd** pour un serveur, la quantité de données à traiter et envoyer requiert de la **stabilité**...
 
 Pour rappel, un flux **RTMP** (Real-Time Messaging Protocol) est un protocole de transmission de données en temps réel utilisé principalement pour la diffusion en direct sur Internet. Il permet de transmettre des vidéos, de l'audio et d'autres données en temps réel à partir d'un serveur vers un client, comme un lecteur vidéo en ligne ou une application de diffusion en direct.
 
-![Schema](/assets/cases/pitchoun/schema.png)
+![Schema](/cases/pitchoun/schema.png)
 
 **HLS (HTTP Live Streaming)** est un protocole de diffusion de contenu vidéo en continu sur Internet. Il permet de diffuser des vidéos en ligne en utilisant le protocole HTTP, ce qui le rend compatible avec la plupart des navigateurs Web et des appareils mobiles. En pratique c'est un format permettant de découper le flux vidéo en petit segment (4 secondes par exemple), pour le live streaming c'est parfait (c'est aussi très utilisé pour de la VOD afin d'optimiser le temps de chargement et faire usage de l'<abbr title="Adaptative Bitrate">ABR</abbr>), il comporte donc un fichier principal décrivant simplement les différents segments, leurs emplacements, leurs durées, leurs qualités... Voici un exemple :
 

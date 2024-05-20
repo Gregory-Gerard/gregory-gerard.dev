@@ -41,7 +41,7 @@ export default async function Home() {
 
         <p className="max-w-3xl leading-relaxed text-zinc-400">
           Je suis Grégory, un développeur web full-stack de {oldness()} ans, actuellement sur Hyères. En ce moment je
-          suis Tech Lead chez&nbsp;
+          suis Lead Dev chez&nbsp;
           <UnderlinedLink href="https://la-boite-immo.com" target="_blank" rel="noreferrer">
             La Boîte Immo
           </UnderlinedLink>
