@@ -6,8 +6,6 @@ import * as Icons from '@/components/icons';
 import Footer from '@/components/Footer';
 import MdxRenderer from '@/components/MdxRenderer';
 
-export const revalidate = Infinity;
-
 export default function Page({ params: { slug } }: { params: { slug: string } }) {
   const item = getCase(slug);
 

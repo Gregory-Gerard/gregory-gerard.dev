@@ -22,8 +22,6 @@ export const metadata: Metadata = {
   icons: '/favicon.svg',
 };
 
-export const revalidate = Infinity;
-
 export default async function Home() {
   const cases = getCases();
   const articles = getArticles().slice(0, 3);

@@ -5,8 +5,6 @@ import Footer from '@/components/Footer';
 import MdxRenderer from '@/components/MdxRenderer';
 import { getArticle, getArticles } from '@/services/article';
 
-export const revalidate = Infinity;
-
 export default function Page({ params: { slug } }: { params: { slug: string } }) {
   const item = getArticle(slug);
 
