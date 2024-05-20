@@ -32,6 +32,19 @@ export default function Page({ params: { slug } }: { params: { slug: string } })
         <section className="!prose prose-zinc !prose-invert prose-img:rounded-md prose-img:shadow-xl mx-auto">
           <MdxRenderer markdown={item.content} />
         </section>
+
+        <footer className="max-w-prose mx-auto mt-12">
+          <small className="text-zinc-500 text-xs tracking-wider">
+            <a
+              href={`https://github.com/Gregory-Gerard/gregory-gerard.dev/blob/main/app/articles/${slug}.md`}
+              target="_blank"
+              className="underline"
+            >
+              Contribute
+            </a>{' '}
+            to the article if you have any corrections or improvements to suggest!
+          </small>
+        </footer>
       </article>
 
       <div className="max-w-prose mx-auto">
