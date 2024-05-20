@@ -7,3 +7,35 @@
     cursor: none !important;
   }
 }
+
+.shiki {
+    @apply relative !bg-zinc-950 rounded-md p-4 font-mono text-sm;
+}
+
+.shiki code {
+    @apply block w-full;
+}
+
+.shiki.has-diff .line.diff {
+    @apply -mx-4 px-4 w-[calc(100%+theme(spacing.8))] inline-block;
+}
+
+.shiki.has-diff .line.diff::before {
+    @apply absolute left-1.5 opacity-80 text-xs leading-5;
+}
+
+.shiki.has-diff .line.diff.add {
+    @apply bg-green-950/50;
+}
+
+.shiki.has-diff .line.diff.add::before {
+    @apply content-['+'];
+}
+
+.shiki.has-diff .line.diff.remove {
+    @apply bg-red-500/15;
+}
+
+.shiki.has-diff .line.diff.remove::before {
+    @apply content-['-'];
+}

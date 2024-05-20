@@ -38,9 +38,9 @@ acme/
 ├─ packages/
 │  ├─ ui/
 │  ├─ app/
-│  ├─ eslint-config/
-│  │  ├─ package.json
-│  │  ├─ index.js
+│  ├─ eslint-config/ // [!code ++]
+│  │  ├─ package.json // [!code ++]
+│  │  ├─ index.js // [!code ++]
 ├─ package.json
 ```
 
@@ -162,11 +162,11 @@ Our updated architecture now looks like this:
 acme/
 ├─ packages/
 │  ├─ ui/
-│  │  ├─ .eslintrc.cjs
-│  │  ├─ package.json
+│  │  ├─ .eslintrc.cjs // [!code ++]
+│  │  ├─ package.json // [!code ++]
 │  ├─ app/
-│  │  ├─ .eslintrc.cjs
-│  │  ├─ package.json
+│  │  ├─ .eslintrc.cjs // [!code ++]
+│  │  ├─ package.json // [!code ++]
 │  ├─ eslint-config/
 │  │  ├─ package.json
 │  │  ├─ index.js
@@ -181,7 +181,7 @@ yarn workspace @acme/ui eslint .
 
 Uh-oh. It won't work. You should encounter an error like:
 
-```text
+```js
 Error: Cannot find module 'eslint-plugin-<x>'
 ```
 
@@ -231,14 +231,14 @@ acme/
 │  ├─ eslint-config/
 │  │  ├─ package.json
 │  │  ├─ index.js
-│  │  ├─ patch.js
+│  │  ├─ patch.js // [!code ++]
 ├─ package.json
 ```
 
 Edit the ESLint configuration in each workspace to use our patch, in `.eslintrc.cjs`:
 
 ```js
-require('@acme/eslint-config/patch');
+require('@acme/eslint-config/patch'); // [!code ++]
 
 module.exports = {
   extends: ['@acme/eslint-config'],
