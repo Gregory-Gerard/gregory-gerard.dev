@@ -33,10 +33,18 @@ export default async function Home() {
       <Section>
         <Avatar className="w-24 h-24" />
         <h1 className="max-w-4xl text-5xl sm:text-6xl tracking-tight font-bold">
-          Développeur web full-stack chez&nbsp;
-          <RoundedLink href="https://la-boite-immo.com" target="_blank" rel="noreferrer" title="Site de La Boîte Immo">
-            <LaBoiteImmoIcon className="inline" />
-          </RoundedLink>
+          Développeur web full-stack{' '}
+          <span className="whitespace-nowrap">
+            chez&nbsp;
+            <RoundedLink
+              href="https://la-boite-immo.com"
+              target="_blank"
+              rel="noreferrer"
+              title="Site de La Boîte Immo"
+            >
+              <LaBoiteImmoIcon className="inline" />
+            </RoundedLink>
+          </span>
         </h1>
 
         <p className="max-w-3xl leading-relaxed text-zinc-400">
@@ -80,7 +88,7 @@ export default async function Home() {
         </div>
       </Section>
 
-      <div className="grid grid-cols-1 grid-cols-3 lg:gap-4">
+      <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-4">
         <Section title="Mes notes" className="col-span-2 lg:pr-4">
           {articles.map((article) => (
             <ArticlePreview
