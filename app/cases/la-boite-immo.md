@@ -13,13 +13,11 @@ order: 1
 
 Je suis à La Boîte Immo depuis **Juillet 2021**, dans le pôle logiciel Hektor, qui est un logiciel pour les agents immobiliers, leader dans le secteur des logiciels immobiliers pour les agences indépendantes.
 
-Mon parcours a débuté en tant que développeur web, où je participais à l'évolution des différents produits, de la mise en place d'outils pour l'environnement de travail et de la maintenance via un système de tickets. Rapidement, j'ai pris des responsabilités en tant que Tech Lead, en devenant le référent technique de l'équipe « Qualité & Production ». J'ai géré les revues de code, les cahiers des charges, la maintenance et la gestion des urgences, tout en mettant en place des outils de CI/CD avec Bitbucket et des tests unitaires/fonctionnels.
+Mon parcours a débuté en tant que développeur web, où je participais à l'évolution des différents produits, de la mise en place d'outils pour l'environnement de travail et de la maintenance via un système de tickets. Rapidement, j'ai pris des responsabilités en tant que **Tech Lead**, en devenant le référent technique de l'équipe « Qualité & Production ».
 
-Par la suite, j'ai pris la tête de la squad « CRM », où j'ai conçu et mis en œuvre des fonctionnalités innovantes pour améliorer la gestion de la relation client des professionnels de l'immobilier.
+Par la suite, j'ai pris la tête de la **squad « CRM »**, où j'ai conçu et mis en œuvre des fonctionnalités innovantes pour améliorer la gestion de la relation client des professionnels de l'immobilier.
 
-Aujourd'hui, je suis **Lead Dev** d'une équipe de plus de 10 personnes sur le pôle logiciel Hektor. Mon rôle consiste à diriger les développements, définir l'orientation technique et apporter des solutions de haute valeur sur des sujets complexes tels que l'intégration d'IA, message queuing à l'échelle, l'architecture technique et la qualité générale. J'œuvre aussi à faire monter en compétences l'équipe avec laquelle je travaille (et moi-même) grâce à des revues de code, des sessions de pair programming et une veille technique continue, et plus encore.
-
-Hektor, avec ses 12 ans d'existence, possède un héritage technique conséquent, comprenant des milliers de fichiers et plus d'un million de lignes de code (en comptant seulement le PHP). Évoluer dans cet environnement n'est pas toujours facile, mais notre équipe travaille activement à résorber la dette technique.
+Aujourd'hui, je suis **Lead Dev** du pôle logiciel Hektor. Mon rôle consiste à diriger les développements, définir l'orientation technique et apporter des solutions sur des sujets complexes, l'architecture technique et la qualité générale. J'œuvre aussi à faire monter en compétences l'équipe avec laquelle je travaille et moi-même grâce à des revues de code, des sessions de pair programming, une veille technique continue, et plus encore.
 
 ## Missions
 
@@ -33,6 +31,8 @@ Voici quelques-unes de mes missions non exhaustives effectuées au fil des anné
 
 - **Gestion des envois d'emails** : J'ai créé un microservice en Symfony 6 pour centraliser l'envoi d'emails, fonctionnant principalement en asynchrone grâce à Symfony Messenger. Ce service gère les emails de 45 000 utilisateurs, avec une architecture pensée pour être maintenable et réutilisable par d'autres projets internes à La Boîte Immo.
 
-- **Amélioration de la qualité de code** : J'ai contribué à l'amélioration de la qualité des projets en les rendant compatibles avec PSR-12. J'ai intégré des pipelines de vérification de code et défini des règles de style de codage à l'aide d'outils comme PHP CS Fixer, assurant ainsi un code propre et maintenable. De plus, j'ai pu mettre en place des pipelines sur une majorité des projets, incluant le linting, le type checking, le formatage et la livraison automatique.
+- **Amélioration de la qualité de code** : J'ai intégré des pipelines de vérification de code et défini des règles de style de codage à l'aide d'outils comme PHP CS Fixer, assurant ainsi un code propre et maintenable. De plus, j'ai pu mettre en place des pipelines sur une majorité des projets, incluant le linting, le type checking, le formatage et la livraison automatique.
 
-- **Optimisation de l'expérience développeur (DX)** : J'ai maintenu et évolué notre plateforme de développement sous Docker, créant un environnement ISO prod compatible avec Windows, MacOS et Linux. J'ai également développé des outils facilitant l'installation et la maintenance, tout en participant à l'élaboration de nos normes de développement et de commits.
+- **Optimisation de l'expérience développeur (DX)** : J'ai maintenu et évolué notre plateforme de développement sous Docker, offrant un environnement ISO prod compatible avec Windows, MacOS et Linux. J'ai également développé des outils facilitant l'installation et la maintenance, tout en participant à l'élaboration de nos normes de développements et de commits.
+
+Pour donner un peu de contexte, Hektor est un logiciel avec un lourd héritage technique (le logiciel a plus de 12 ans). La plupart des missions sont complexes, les technologies utilisées peuvent être limitées (ce qui a pu nécessiter l'intégration de certains microservices par exemple). C'est pour cela que la qualité du logiciel et son amélioration sont désormais au cœur de mon travail au quotidien.
