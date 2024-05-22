@@ -1,42 +1,42 @@
 ---
-title: Pitchoun Médias
-headline: Plateforme de TV & Radio
+title: Pitchoun
+headline: TV & Radio Platform
 icon: PitchounIcon
 order: 2
 ---
 
-## Présentation
+## Introduction
 
-<a href="https://pitchoun-medias.fr" target="_blank">Pitchoun Médias</a> est un groupe média indépendant qui cible les enfants de 4 à 12 ans et leur famille. Il propose du contenu ludo-éducatif et musical à travers sa télévision, ses radios, ses offres numériques et son service événementiel. Le groupe compte deux chaînes de télévision, plusieurs radios déclinées en différentes versions et une offre digitale comprenant des applications, des podcasts et une offre de replay vidéo. En plus de ces activités, Pitchoun Médias organise également des événements pour les enfants et les familles.
+<a href="https://pitchoun-medias.fr" target="_blank">Pitchoun Médias</a> is an independent media group targeting children aged 4 to 12 and their families. It offers educational and musical content through its television, radio stations, digital offerings, and event services. The group includes two television channels, several radio stations, and a digital platform that includes apps, podcasts, and a video replay service. In addition to these activities, Pitchoun Médias also organizes events for children and families.
 
-Le groupe propose des offres d'abonnement permettant à ses utilisateurs d'accéder à du contenu supplémentaire et exclusif. L'une de ces offres est MyPitchoun, qui donne accès à du contenu ludo-éducatif pour les enfants et leur famille, ainsi qu'à des fonctionnalités de suivi de l'apprentissage de l'enfant. L'offre MyPitchoun+ inclut tous les avantages de MyPitchoun, ainsi qu'un accès à du contenu supplémentaire, comme des épisodes de télévision en avant-première, un **live TV 24h/24 7j/7** et des podcasts exclusifs.
+The group offers subscription plans that allow users to access additional and exclusive content. One of these plans is MyPitchoun, which provides access to educational content for children and their families, along with child learning tracking features. The MyPitchoun+ plan includes all the benefits of MyPitchoun, as well as access to additional content, such as early access to TV episodes, a **24/7 live TV**, and exclusive podcasts.
 
-J'accompagne Pitchoun Médias depuis maintenant **des années** sur à peu près tous les fronts pour leur présence numérique, j'ai pu travailler sur la première version du site internet qui était aussi une de mes premières expériences en freelance. Le groupe a renouvelé sa confiance en moi pour réaliser une deuxième version, plus ambitieuse, plus moderne, plus poussée. Voici rapidement tous les principaux sujets travaillé dans ce projet
+I have been supporting Pitchoun Médias for **years** on almost all fronts for their digital presence. I worked on the first version of the website, which was also one of my first freelance experiences. The group renewed their trust in me to create a second version, more ambitious, modern, and advanced. Here are the main topics covered in this project:
 
-- **Site web** : Réalisé avec les technos <a href="https://laravel.com" target="_blank">Laravel</a>, <a href="https://tailwindcss.com" target="_blank">Tailwind</a>, <a href="https://alpinejs.dev" target="_blank">Alpine.js</a>, avec pas mal de services tiers mais principalement <a href="https://fr.kinow.com" target="_blank">Kinow</a> pour la partie VOD et abonnements, <a href="https://www.ausha.co/fr/" target="_blank">Ausha</a> pour la partie podcast. En somme, le site web est assez classique avec un système de gestion de contenu fait maison (donc administration complète du site web)
-- **Live TV** : Aspect plus intéressant techniquement, on gère notre propre infrastructure de live TV, diffusé 24h/24 7j/7. Le groupe diffuse un flux RTMP qu'on intègre et traite afin de le rendre compatible pour du web.
-- **Infra** : Côté infrastucture, tout est hébergé sur des serveurs dédiés, toutes sous Debian.
+- **Website**: Built with <a href="https://laravel.com" target="_blank">Laravel</a>, <a href="https://tailwindcss.com" target="_blank">Tailwind</a>, <a href="https://alpinejs.dev" target="_blank">Alpine.js</a>, and many third-party services, but mainly <a href="https://fr.kinow.com" target="_blank">Kinow</a> for the VOD and subscriptions, and <a href="https://www.ausha.co/fr/" target="_blank">Ausha</a> for the podcast section. Overall, the website is quite classic with a custom content management system (complete site administration).
+- **Live TV**: A more technically interesting aspect, we manage our own live TV infrastructure, broadcasting 24/7. The group streams an RTMP feed that we integrate and process to make it web-compatible.
+- **Infrastructure**: Everything is hosted on dedicated servers, all running with Debian.
 
-  Pour le site web, la stack <abbr title="Linux Apache MariaDB PHP"><a href="https://fr.wikipedia.org/wiki/LAMP" target="_blank">LAMP</a></abbr> est installée, un seul serveur étant suffisant pour la charge.
+  For the website, the <abbr title="Linux Apache MariaDB PHP"><a href="https://fr.wikipedia.org/wiki/LAMP" target="_blank">LAMP</a></abbr> stack is installed, with a single server being sufficient for the load.
 
-  Pour la partie live TV, j'ai utilisé <a href="https://www.nginx.com" target="_blank">NGINX</a> qui est le point d'entrée pour le traitement du flux RTMP. La partie traitement est réalisée avec <a href="https://ffmpeg.org" target="_blank">FFmpeg</a>, un flux RTMP n'étant pas consommable en web, il est obligatoire de passer par une étape d'encodage grâce à FFmpeg pour une conversion en HLS (format compatible en web)
-- **Autres** : <a href="https://github.com/louislam/uptime-kuma" target="_blank">Uptime Kuma</a> et <a href="https://github.com/netdata/netdata" target="_blank">Netdata</a> pour le monitoring de l'infrastructure et beaucoup de script bash pour automatiser la maintenance 😅
+  For the live TV part, I used <a href="https://www.nginx.com" target="_blank">NGINX</a> as the entry point for processing the RTMP feed. The processing part is done with <a href="https://ffmpeg.org" target="_blank">FFmpeg</a>. Since an RTMP feed is not web-consumable, it must be encoded using FFmpeg for conversion to HLS (web-compatible format).
+- **Others**: <a href="https://github.com/louislam/uptime-kuma" target="_blank">Uptime Kuma</a> and <a href="https://github.com/netdata/netdata" target="_blank">Netdata</a> for infrastructure monitoring, and many bash scripts for automating maintenance 😅
 
 ## Stack
 
-### Site web
+### Website
 
-Pour la partie site web, rien de très intéressant techniquement, le plus complexe a été **l'intégration des prestataires externes**, adapter le système d'authentification de Laravel avec des <a href="https://laravel.com/docs/9.x/authentication#adding-custom-user-providers" target="_blank">providers personnalisés</a> (gestion des comptes externalisées chez Kinow), gérer correctement le rate limiting, la gestion du cache...
+For the website part, nothing too technically interesting. The most complex part was **integrating external providers**, adapting Laravel's authentication system with <a href="https://laravel.com/docs/9.x/authentication#adding-custom-user-providers" target="_blank">custom providers</a> (accounts managed externally by Kinow), properly managing rate limiting, cache management...
 
 ### Live TV
 
-Concernant le live TV, comme expliqué précédemment, le groupe gère via sa régie un flux live qui est disponible **24h/24 7j/7**, composé des différents programmes, comme une chaîne TV classique. De mon côte, j'ai mis à disposition un point d'entrée via NGINX pour que la régie pousse ce flux RTMP vers moin point d'entrée. Ce fut très intéressant car travailler dans la vidéo dans le web est compliqué : **peu de documentation**, **beaucoup d'outils propriétaires**, **le traitement est lourd** pour un serveur, la quantité de données à traiter et envoyer requiert de la **stabilité**...
+Regarding live TV, as explained earlier, the group manages a live stream available **24/7**, composed of different programs, like a traditional TV channel. On my end, I provided an entry point via NGINX for the control room to push this RTMP feed to my entry point. This was very interesting because working with video on the web is complicated: **little documentation**, **many proprietary tools**, **heavy processing** for a server, the amount of data to process and send requires **stability**...
 
-Pour rappel, un flux **RTMP** (Real-Time Messaging Protocol) est un protocole de transmission de données en temps réel utilisé principalement pour la diffusion en direct sur Internet. Il permet de transmettre des vidéos, de l'audio et d'autres données en temps réel à partir d'un serveur vers un client, comme un lecteur vidéo en ligne ou une application de diffusion en direct.
+To recap, an **RTMP** (Real-Time Messaging Protocol) stream is a real-time data transmission protocol mainly used for live streaming on the Internet. It allows the transmission of video, audio, and other data in real-time from a server to a client, such as an online video player or a live streaming application.
 
 ![Schema](/cases/pitchoun/schema.png)
 
-**HLS (HTTP Live Streaming)** est un protocole de diffusion de contenu vidéo en continu sur Internet. Il permet de diffuser des vidéos en ligne en utilisant le protocole HTTP, ce qui le rend compatible avec la plupart des navigateurs Web et des appareils mobiles. En pratique c'est un format permettant de découper le flux vidéo en petit segment (4 secondes par exemple), pour le live streaming c'est parfait (c'est aussi très utilisé pour de la VOD afin d'optimiser le temps de chargement et faire usage de l'<abbr title="Adaptative Bitrate">ABR</abbr>), il comporte donc un fichier principal décrivant simplement les différents segments, leurs emplacements, leurs durées, leurs qualités... Voici un exemple :
+**HLS (HTTP Live Streaming)** is a protocol for streaming video content over the Internet. It allows streaming videos online using the HTTP protocol, making it compatible with most web browsers and mobile devices. In practice, it is a format that divides the video stream into small segments (e.g., 4 seconds each), which is perfect for live streaming (also widely used for VOD to optimize loading times and use <abbr title="Adaptive Bitrate">ABR</abbr>). It includes a main file simply describing the different segments, their locations, durations, qualities... Here is an example:
 
 ```swift
 #EXTM3U
@@ -55,8 +55,9 @@ fileSequence4.ts
 fileSequence5.ts
 ```
 
-Pour parler de tarifs aussi, au départ j'avais évidemment prévu d'intégrer une solution en partie prête grâce à AWS, Azure ou encore GCP. Cependant, autant le traitement du flux RTMP n'était pas spécialement couteux, mais comme souvent avec ces services, le plus cher c'est souvent les données entrantes (flux RTMP) et les données sortantes (3 flux HLS dont un en HD), j'ai donc réalisé plusieurs simulations au travers de plusieurs services tiers et on se situait **entre 1000€ à 2000€ par mois**, le streaming continu, c'est assez niche et donc couteux.
+Regarding costs, I initially planned to integrate a partially ready-made solution with AWS, Azure, or GCP. However, while processing the RTMP feed was not particularly expensive, as often with these services, the most costly part is usually the incoming data (RTMP feed) and the outgoing data (3 HLS streams, including one in HD). Therefore, I ran several simulations across various third-party services, and the costs ranged **between €1000 to €2000 per month**. Continuous streaming is quite niche and therefore expensive.
 
-En intégrant cette solution fait maison, qui tient depuis désormais plus de 2 ans, j'ai donc évité ces dépenses (enfin, le projet de live TV n'aurait d'ailleurs jamais vu le jour si le tarif avait été celui évoqué), un bon serveur dédié, un peu d'huile de coude et chaque problème à sa solution 🥳
+By integrating this homemade solution, which has now been running for over 2 years, I avoided these expenses (the live TV project would never have materialized if the cost had been as mentioned). A good dedicated server, some hard work, and every problem has its solution 🥳
 
-Besoin d'intégrer une solution similaire, faire du traitement vidéo, avoir votre propre flux de streaming dispo 24h/24 7j/7 ? <a href="mailto:contact@gregory-gerard.dev">Contactez-moi</a> !
+Need to integrate a similar solution, do video processing, have your own streaming feed available 24/7? <a href="mailto:contact@gregory-gerard.dev">Contact me</a>!
+

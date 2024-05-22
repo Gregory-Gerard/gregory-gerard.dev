@@ -12,10 +12,9 @@ export default function Page() {
         <Breadcrumb pages={[{ name: 'Articles' }]} />
       </div>
 
-      <h1 className="text-4xl sm:text-6xl font-bold tracking-tight mb-8">Tous mes articles</h1>
+      <h1 className="text-4xl sm:text-6xl font-bold tracking-tight mb-8">All my posts</h1>
       <p className="leading-loose tracking-tight text-zinc-400 mb-16">
-        Durant mon temps libre, j&apos;écris des articles sur les sujets qui m&apos;intéressent : développement, infra,
-        tech...
+        In my spare time, I write articles on topics I&apos;m interested in: development, infrastructure, technology...
       </p>
 
       <div className="flex flex-col gap-8">

@@ -6,6 +6,7 @@ import MdxRenderer from '@/components/MdxRenderer';
 import { getArticle, getArticles } from '@/services/article';
 import { Metadata } from 'next';
 import Image from 'next/image';
+import { format } from 'date-fns/format';
 
 type Props = {
   params: { slug: string };
@@ -43,7 +44,7 @@ export default function Page({ params: { slug } }: Props) {
           <h1 className="text-4xl sm:text-6xl font-bold tracking-tight">{item.frontmatter.title}</h1>
           <h2 className="text-md sm:text-lg font-medium text-zinc-400 tracking-wide">{item.frontmatter.headline}</h2>
           <time className="text-xs text-zinc-500 tracking-wider">
-            Publié le {new Date(item.frontmatter.publishedAt).toLocaleString()}
+            {format(item.frontmatter.publishedAt, 'dd MMMM yyyy')}
           </time>
 
           <Image

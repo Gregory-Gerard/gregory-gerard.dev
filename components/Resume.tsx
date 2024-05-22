@@ -40,10 +40,10 @@ export default function Resume() {
         logo={<LaBoiteImmoLogo className="w-6 h-6" />}
         company="La Boîte Immo"
         roles={{
-          'Lead Dev': 'Jan. 2023 — En cours',
+          'Lead Dev': 'Jan. 2023 — Today',
           'Tech Lead': 'Sept. 2022 — Jan. 2023',
-          'Développeur web senior': 'Juin 2022 — Sept. 2022',
-          'Développeur web': 'Juill. 2021 — Juin 2022',
+          'Senior web developer': 'June 2022 — Sept. 2022',
+          'Web developer': 'July 2021 — June 2022',
         }}
       />
 
@@ -51,8 +51,8 @@ export default function Resume() {
         logo={<DftIcon className="w-6 h-6" />}
         company="D.F.T"
         roles={{
-          'Développeur web': 'Sept. 2020 — Juin 2021',
-          'Développeur alternant': 'Sept. 2017 — Août 2020',
+          'Web developer': 'Sept. 2020 — June 2021',
+          'Developer intern': 'Sept. 2017 — Aug. 2020',
         }}
       />
 
@@ -60,7 +60,7 @@ export default function Resume() {
         logo={<Briefcase className="w-6 h-6 text-zinc-600" />}
         company="Freelance"
         roles={{
-          'Développeur web': 'Jan. 2017 — En cours',
+          'Web developer': 'Jan. 2017 — Today',
         }}
       />
     </div>

@@ -1,18 +1,16 @@
 ---
 title: xDrop
-headline: Application de transfert de fichiers
+headline: File transfer application
 icon: XDropIcon
 order: 3
 ---
 
-<a href="https://xdrop.fr" target="_blank">xDrop</a> est un projet réalisé dans mon temps libre qui a su trouver son petit public. Je l'ai développé en Laravel, Tailwind et un peu de JS (pas de framework).
+<a href="https://xdrop.fr" target="_blank">xDrop</a> is a project I developed in my spare time that has found a small audience. I built it using Laravel, Tailwind, and a bit of JS (no framework).
 
-Le but de ce service est le même que <a href="https://wetransfer.com" target="_blank">WeTransfer</a>, <a href="https://fromsmash.com" target="_blank">Smash</a>, donc de transférer des fichiers facilement, sans aucun compte, sans limite. La seule différence c'est la durée de vie plutôt courte du transfert (1 heure, au départ c'était même 10 minutes) et la génération d'un code de transfert plutôt qu'un lien, ça facilite grandement le transfert d'un téléphone vers un ordinateur (ou inversement), je vois souvent l'utilisation en open-space aussi pour se transférer des fichiers rapidement.
+The purpose of this service is the same as <a href="https://wetransfer.com" target="_blank">WeTransfer</a>, <a href="https://fromsmash.com" target="_blank">Smash</a>, which is to transfer files easily, without any account, and without limits. The only difference is the rather short lifespan of the transfer (1 hour, initially it was even 10 minutes) and the generation of a transfer code instead of a link. This greatly facilitates the transfer from a phone to a computer (or vice versa). I often see it being used in open spaces for quick file transfers.
 
-![Site web xDrop](/cases/xdrop/website.jpg)
+![xDrop website](/cases/xdrop/website.jpg)
 
-Le service est hébergé chez <a href="https://www.scaleway.com/fr/" target="_blank">Scaleway</a> et les fichiers sont aussi hébergés chez eux via leur offre de stockage objet (S3), que j'ai pu mettre en place très facilement avec Laravel.
+The service is hosted on <a href="https://www.scaleway.com/fr/" target="_blank">Scaleway</a> and the files are also hosted by them through their object storage offer (S3), which I was able to set up very easily with Laravel.
 
-Tout ça ne me coûte quasiment rien hors hébergement et nom de domaine, le stockage est très abordable et le temps de stockage tellement court que ce n'est même pas calculé par Scaleway.
-
-Ce projet est évidemment open source, disponible sur <a href="https://github.com/Gregory-Gerard/xdrop" target="_blank">Github</a>.
+This project is, of course, open source, available on <a href="https://github.com/Gregory-Gerard/xdrop" target="_blank">Github</a>.

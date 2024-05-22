@@ -23,10 +23,10 @@ export default async function Home() {
     <>
       <Section>
         <Avatar className="w-24 h-24" />
-        <h1 className="max-w-4xl text-5xl sm:text-6xl tracking-tight font-bold">
-          Développeur web full-stack{' '}
+        <h1 className="max-w-3xl text-5xl sm:text-6xl tracking-tight font-bold">
+          Software developer{' '}
           <span className="whitespace-nowrap">
-            chez&nbsp;
+            at&nbsp;
             <RoundedLink
               href="https://la-boite-immo.com"
               target="_blank"
@@ -39,33 +39,29 @@ export default async function Home() {
         </h1>
 
         <p className="max-w-3xl leading-relaxed text-zinc-400">
-          Je suis Grégory, un développeur web full-stack de {oldness()} ans, actuellement sur Hyères. En ce moment je
-          suis Lead Dev chez&nbsp;
+          I&apos;m Grégory, a {oldness()}-year-old full-stack web developer from Hyères, France. I am currently
+          Lead&nbsp;Developer at&nbsp;
           <UnderlinedLink href="https://la-boite-immo.com" target="_blank" rel="noreferrer">
             La Boîte Immo
           </UnderlinedLink>
-          , une société éditant des logiciels phares dans le secteur de l&apos;immobilier. En parallèle, je suis aussi
-          freelance afin de vous accompagner dans vos projets.
+          , a company that produces leading software in the real estate sector. Additionally, I work as a freelancer to
+          assist you with your projects.
         </p>
 
         <div className="flex gap-6 text-zinc-400">
-          <RoundedLink href="https://www.linkedin.com/in/gregoryger/" target="_blank" title="Mon profil Linkedin">
+          <RoundedLink href="https://www.linkedin.com/in/gregoryger/" target="_blank" title="Linkedin">
             <Linkedin size={24} />
           </RoundedLink>
-          <RoundedLink
-            href="https://github.com/Gregory-Gerard/gregory-gerard.dev"
-            target="_blank"
-            title="Mon profil Github"
-          >
+          <RoundedLink href="https://github.com/Gregory-Gerard/gregory-gerard.dev" target="_blank" title="Github">
             <GitHub size={24} />
           </RoundedLink>
-          <RoundedLink href="mailto:contact@gregory-gerard.dev" target="_blank" title="Me contacter par email">
+          <RoundedLink href="mailto:contact@gregory-gerard.dev" target="_blank" title="Email">
             <Mail size={24} />
           </RoundedLink>
         </div>
       </Section>
 
-      <Section title="Quelques études de cas">
+      <Section title="A few case studies">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {cases.map((item) => (
             <CaseStudy
@@ -80,7 +76,7 @@ export default async function Home() {
       </Section>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-4">
-        <Section title="Mes notes" className="col-span-2 lg:pr-4">
+        <Section title="My notes" className="col-span-2 lg:pr-4">
           {articles.map((article) => (
             <ArticlePreview
               key={article.frontmatter.title}
@@ -95,12 +91,12 @@ export default async function Home() {
             href={'/articles'}
             className="sm:self-start px-6 py-2 bg-zinc-800/50 hover:bg-zinc-800 text-center sm:text-left font-medium text-sm tracking-wide rounded-2xl transition-colors"
           >
-            En voir plus
+            See more
           </Link>
         </Section>
 
         <aside className="flex flex-col gap-6 p-6 rounded-2xl shadow-outline">
-          <strong className="font-medium text-100">Parcours</strong>
+          <strong className="font-medium text-100">Experience</strong>
 
           <Resume />
         </aside>

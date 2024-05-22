@@ -25,7 +25,7 @@ export default function ArticlePreview(
           dateTime={props.publishedAt.toISOString()}
           className="text-xs text-zinc-500"
         >
-          {format(props.publishedAt, "'le' dd MMMM yyyy", { locale: fr })}
+          {format(props.publishedAt, 'dd MMMM yyyy')}
         </time>
       </article>
     </Link>
